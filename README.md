@@ -9,26 +9,29 @@ Quickly print/log the variable in your favourite language
 Use your favourite plugin manager to install. I use `vim-plug`.
 
 ```
-Plug 'meain/vim-printer'
+Plug 'aonemd/vim-printer'
 ```
 
 ## Usage
 
-There is two keybinding in each normal mode and visual mode.
-In normal mode it works on current word under cursor and in visual mode it works on the visual selection.
+There is two keybinding in each normal mode and visual mode.  In normal mode it
+works on current word under cursor and in visual mode it works on the visual
+selection.
 
-- `<leader>p` to add print/log statement below current line
-- `<leader>P` to add print/log statement above current line
+- `<leader>P` to add print/log statement below current line
+- `<leader>O` to add print/log statement above current line
 
 
 ## Configuration
 
-You can change the default keybindings like below.
-It will be used both in normal mode and visual mode.
+You can change the default keybindings like below.  It will be used both in
+normal mode and visual mode. Please note that setting a map to `''` or `' '` in
+order to remove it, will result in remapping the `:` in vim which is not what
+anyone wants.
 
 ```
-let g:vim_printer_print_below_keybinding = '<leader>p'
-let g:vim_printer_print_above_keybinding = '<leader>P'
+let g:vim_printer_print_below_keybinding = '<leader>P'
+let g:vim_printer_print_above_keybinding = '<leader>O'
 ```
 
 You can add new languages or override existing by using:
@@ -41,16 +44,11 @@ let g:vim_printer_items = {
       \ }
 ```
 
-
-
 ## Future TODO
 
 - add some kind of debug mode print
     eg: `logging.log()` in python or `println!('{:?}', var)` in rust
-    
-    
-    
-## Alternatives
 
+## Alternatives
 
 - [vim-printf](https://github.com/mptre/vim-printf)
