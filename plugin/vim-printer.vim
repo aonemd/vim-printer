@@ -11,19 +11,21 @@ endif
 let g:loaded_vim_printer = 1
 
 let s:vim_printer_items_full = {
+            \ 'rust': 'println!("{$}: {:?}", {$});',
+            \ 'go': 'fmt.Println("{$}:", {$})',
+            \ 'c': 'printf("{$}: %d", {$});',
+            \ 'cpp': 'printf("{$}: %d", {$});',
+            \ 'ruby': 'puts("{$}: #{{$}}")',
+            \ 'crystal': 'puts("{$}: #{{$}}")',
             \ 'python': 'print("{$}:", {$})',
             \ 'javascript': 'console.log("{$}:", {$})',
             \ 'javascript.jsx': 'console.log("{$}:", {$})',
             \ 'typescript': 'console.log("{$}:", {$})',
             \ 'typescript.tsx': 'console.log("{$}:", {$})',
-            \ 'go': 'fmt.Println("{$}:", {$})',
-            \ 'vim': 'echo "{$}: ".{$}',
-            \ 'rust': 'println!("{$}: {:?}", {$});',
             \ 'sh': 'echo "{$}: " "${$}"',
             \ 'bash': 'echo "{$}: " "${$}"',
             \ 'zsh': 'echo "{$}: " "${$}"',
-            \ 'f77': 'write(6,*)"{$}: ", {$}',
-            \ 'f90': 'write(6,*)"{$}: ", {$}' 
+            \ 'vim': 'echo "{$}: ".{$}',
             \ }
 
 let g:vim_printer_items = get(g:, 'vim_printer_items', {})
